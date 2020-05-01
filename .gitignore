@@ -116,3 +116,6 @@ dist
 
 # Neutrino build directory
 build
+
+# Api Keys
+src/config.js
