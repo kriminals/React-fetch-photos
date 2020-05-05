@@ -6,16 +6,9 @@ import { Col, Row } from 'antd';
 function PicCards({ keyword }) {
   const [pic, setPic] = useState([]);
 
-  
+  console.log(process.env.ACCESSKEY);
+  console.log(process.env.SECRET);
   async function connect() {
-    if (!process.env.ACCESSKEY) {
-      const { config } = await import('./config');
-      const unsplash = new Unsplash({
-        accessKey: config.ACCESSKEY,
-        secret: config.SECRET,
-      });
-      return unsplash;
-    }
     const unsplash = new Unsplash({
       accessKey: process.env.ACCESSKEY,
       secret: process.env.SECRET,
